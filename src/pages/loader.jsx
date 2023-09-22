@@ -25,9 +25,16 @@ export default function Loader() {
             rotate: 400,
             ease: "power4.out",
         });
-        gsap.to(container.current, {
-            duration: 1.5,
+
+        gsap.to(vaultBar.current, {
             delay: 3.7,
+            height: "300px",
+            duration: 0.2,
+            ease: "power4.out",
+        });
+        gsap.to(container.current, {
+            duration: 1,
+            delay: 4.1,
             y: "-100%",
             ease: "power4.out",
         });
@@ -40,15 +47,15 @@ export default function Loader() {
 
     return (
         <div
-            className="bg-[#FDE001] absolute h-screen w-screen flex justify-center items-center flex-col z-10"
+            className="bg-white absolute h-screen w-screen flex justify-center items-center flex-col z-[100]"
             ref={container}
         >
             <div
-                className="absolute h-[600px] w-[40px] bg-[#1f1f1f] z-[1] rounded-[20px] font-satoshi font-extrabold"
+                className="absolute h-[600px] w-[40px]  bg-[#1f1f1f] z-[1] rounded-[20px] font-satoshi font-extrabold"
                 ref={vaultBar}
             ></div>
             <div className="overflow-clip pt-2 h-[6.2rem] absolute z-[2]">
-                <div className="text-right border-2 p-3 border-[#1f1f1f] rounded-br-2xl bg-[#fde001]">
+                <div className="text-right border-2 p-3 border-[#1f1f1f] rounded-br-2xl bg-white">
                     <div className="font-satoshi font-extrabold text-4xl">
                         Voice
                     </div>
@@ -56,7 +63,7 @@ export default function Loader() {
                 </div>
                 <div
                     ref={vaultDoor}
-                    className="text-right border-2 p-3 border-[#1f1f1f] border-l-8 rounded-br-2xl border-r-8 h-24 w-32 bg-[#fde001] -translate-y-full"
+                    className="text-right border-2 p-3 border-[#1f1f1f] border-l-8 rounded-br-2xl border-r-8 h-24 w-32 bg-white -translate-y-full"
                 ></div>
             </div>
         </div>

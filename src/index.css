@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background-color: #1f1f1f;
+}
+
 @font-face {
     font-family: "Satoshi";
     src: url("./fonts/Satoshi/Satoshi-Variable.ttf");

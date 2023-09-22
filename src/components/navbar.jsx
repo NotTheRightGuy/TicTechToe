@@ -1,8 +1,8 @@
 export default function Navbar() {
     return (
-        <div className="border-b-[1px]  h-24 w-screen shadow-md bg-[#1f1f1f]">
-            <div className="flex justify-between items-center ">
-                <div className="font-satoshi flex items-center h-max ">
+        <div className="h-20 w-screen fixed top-0 z-10">
+            <div className="flex justify-between items-center">
+                <div className="font-satoshi flex items-center h-max pl-4 ">
                     <img
                         src="second_logo.png"
                         alt="Logo"
