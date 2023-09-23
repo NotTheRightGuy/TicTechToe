@@ -2,8 +2,10 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 // All Pages Import
+import HowItWorks from "./components/HowItWorks";
 import Hero from "./components/hero";
 import Navbar from "./components/navbar";
+import WhatsThis from "./components/whatIsThis";
 import Loader from "./pages/loader";
 import PageNotFound from "./pages/pageNotFound";
 import RegisterSeed from "./pages/registerSeed";
@@ -25,6 +27,8 @@ function App() {
                         <Loader />
                         <Navbar />
                         <Hero />
+                        <WhatsThis />
+                        <HowItWorks />
                     </>
                 }
             />

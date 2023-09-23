@@ -2,7 +2,7 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
 export default function Navbar() {
     return (
-        <div className="h-20 w-screen fixed top-0 z-10">
+        <div className="h-20 w-screen fixed top-0 z-10 bg-[#1f1f1f]">
             <div className="flex justify-between items-center">
                 <div className="font-satoshi flex items-center h-max pl-4 ">
                     <img
@@ -16,7 +16,7 @@ export default function Navbar() {
                         Home
                     </button>
                     <button className="cursor-pointer opacity-80 hover:opacity-95">
-                        What's this
+                        The problem
                     </button>
                     <button className="cursor-pointer opacity-80 hover:opacity-95">
                         How it works

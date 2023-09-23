@@ -1,13 +1,13 @@
 export default function Hero() {
     return (
         <div className=" h-[90vh] w-screen text-white flex justify-between relative pt-24">
-            <div className="absolute left-[42vw] top-[22vh]">
+            <div className="absolute left-[45vw] top-[22vh]">
                 <img
                     src="https://media0.giphy.com/media/h5cth74Jg7q2jW51Vk/giphy.gif?cid=ecf05e47ghft8q02kh92cyxkttdg8t1rq78hedo56vy0zvfh&ep=v1_stickers_search&rid=giphy.gif&ct=s"
                     className="h-14"
                 />
             </div>
-            <div className="w-1/2 pl-8 ">
+            <div className="w-1/2 pl-20 ">
                 <div className="text-6xl pt-24 font-satoshi font-bold">
                     Your unique voiceprint: the future of secure digital access.
                 </div>
