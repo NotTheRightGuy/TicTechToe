@@ -8,46 +8,50 @@ export default function Loader() {
 
     useEffect(() => {
         gsap.to(vaultDoor.current, {
-            duration: 2,
-            delay: 1,
+            duration: 1,
+            delay: 0.5,
             y: 0,
             ease: "power4.out",
         });
         gsap.to(vaultBar.current, {
-            duration: 2,
-            delay: 1,
+            duration: 1,
+            delay: 0.5,
             rotate: 360,
             ease: "power4.out",
         });
         gsap.to(vaultBar.current, {
-            duration: 0.5,
-            delay: 3.1,
+            duration: 0.3,
+            delay: 1.5,
             rotate: 400,
             ease: "power4.out",
         });
 
         gsap.to(vaultBar.current, {
-            delay: 3.7,
+            delay: 2.2,
             height: "300px",
-            duration: 0.2,
+            duration: 0.4,
             ease: "power4.out",
         });
         gsap.to(container.current, {
-            duration: 1,
-            delay: 4.1,
+            duration: 0.8,
+            delay: 2.8,
             y: "-100%",
             ease: "power4.out",
         });
         gsap.to(container.current, {
             duration: 0.1,
-            delay: 5.2,
+            delay: 3.6,
             display: "none",
         });
     }, []);
 
     return (
         <div
-            className="bg-white fixed h-screen w-screen flex justify-center items-center flex-col z-[100]"
+            style={{
+                background:
+                    "radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%)",
+            }}
+            className="fixed h-screen w-screen flex justify-center items-center flex-col z-[100]"
             ref={container}
         >
             <div

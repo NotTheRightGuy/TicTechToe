@@ -31,9 +31,9 @@ export default function Hero() {
             </div>
             <div>
                 <img
-                    src="https://media1.giphy.com/media/Pn6MsQ9ftT5AZSMOua/giphy.gif?cid=ecf05e474ss8cu9o5cfzy647o6ne00kgtsreigob6jciwsmn&ep=v1_stickers_search&rid=giphy.gif&ct=s"
-                    alt="Sine wave background"
-                    className="translate-y-16 h-[80vh] w-[50vw]"
+                    src="3d-blocks.png"
+                    alt="Hero background"
+                    className="h-[60vh] pr-32 mt-16"
                 />
             </div>
         </div>
