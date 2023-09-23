@@ -20,8 +20,13 @@ export default function Hero() {
                     authenticator. Combine the strength of a password with the
                     uniqueness of your voice. Speak, strengthen, secure.
                 </div>
-                <button className="text-[#9f9f9f] border border-[#9f9f9f] px-5 py-2 rounded-full mt-8 transition-all hover:border-white hover:text-white">
-                    Try Voice Vault
+                <button
+                    onClick={() => {
+                        window.location.href = "/sign-in";
+                    }}
+                    className="text-[#9f9f9f] border border-[#9f9f9f] px-5 py-2 rounded-full mt-8 transition-all hover:border-white hover:text-white"
+                >
+                    Jump in
                 </button>
             </div>
             <div>

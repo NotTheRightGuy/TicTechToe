@@ -47,7 +47,7 @@ export default function Loader() {
 
     return (
         <div
-            className="bg-white absolute h-screen w-screen flex justify-center items-center flex-col z-[100]"
+            className="bg-white fixed h-screen w-screen flex justify-center items-center flex-col z-[100]"
             ref={container}
         >
             <div
@@ -55,7 +55,7 @@ export default function Loader() {
                 ref={vaultBar}
             ></div>
             <div className="overflow-clip pt-2 h-[6.2rem] absolute z-[2]">
-                <div className="text-right border-2 p-3 border-[#1f1f1f] rounded-br-2xl bg-white">
+                <div className="text-right border-2 p-3 border-[#1f1f1f] rounded-br-2xl bg-white text-[#1f1f1f]">
                     <div className="font-satoshi font-extrabold text-4xl">
                         Voice
                     </div>

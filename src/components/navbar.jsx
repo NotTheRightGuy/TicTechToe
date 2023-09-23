@@ -1,3 +1,5 @@
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
+
 export default function Navbar() {
     return (
         <div className="h-20 w-screen fixed top-0 z-10">
@@ -20,11 +22,28 @@ export default function Navbar() {
                         Contact Us
                     </button>
                 </div>
-                <div>
-                    <button className="font-satoshi text-[#1f1f1f] mr-10 py-2 px-4 rounded-3xl hover:bg-[#dfdfdf] transition-all cursor-pointer bg-white">
-                        Get Started
-                    </button>
-                </div>
+                <SignedOut>
+                    <div>
+                        <button
+                            className="font-satoshi text-[#1f1f1f] mr-10 py-2 px-3 text-sm rounded-3xl hover:bg-[#dfdfdf] transition-all cursor-pointer bg-white"
+                            onClick={() => {
+                                window.location.href = "/sign-up";
+                            }}
+                        >
+                            Get Started
+                        </button>
+                    </div>
+                </SignedOut>
+                <SignedIn>
+                    <div className="flex gap-8 items-center">
+                        <div className="text-white opacity-80 cursor-pointer hover:opacity-95 transition-opacity">
+                            Vault
+                        </div>
+                        <div className="mr-10">
+                            <UserButton />
+                        </div>
+                    </div>
+                </SignedIn>
             </div>
         </div>
     );
