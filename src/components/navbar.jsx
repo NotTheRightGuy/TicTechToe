@@ -6,7 +6,7 @@ export default function Navbar() {
             <div className="flex justify-between items-center">
                 <div className="font-satoshi flex items-center h-max pl-4 ">
                     <img
-                        src="second_logo.png"
+                        src="/second_logo.png"
                         alt="Logo"
                         className="h-24 w-24"
                     />
@@ -16,10 +16,10 @@ export default function Navbar() {
                         Home
                     </button>
                     <button className="cursor-pointer opacity-80 hover:opacity-95">
-                        About
+                        What's this
                     </button>
                     <button className="cursor-pointer opacity-80 hover:opacity-95">
-                        Contact Us
+                        How it works
                     </button>
                 </div>
                 <SignedOut>
@@ -36,7 +36,12 @@ export default function Navbar() {
                 </SignedOut>
                 <SignedIn>
                     <div className="flex gap-8 items-center">
-                        <div className="text-white opacity-80 cursor-pointer hover:opacity-95 transition-opacity">
+                        <div
+                            className="text-white opacity-80 cursor-pointer hover:opacity-95 transition-opacity"
+                            onClick={() => {
+                                window.location.href = "/voice-auth/verify";
+                            }}
+                        >
                             Vault
                         </div>
                         <div className="mr-10">

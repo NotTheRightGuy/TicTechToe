@@ -1,3 +1,5 @@
+import { useUser } from "@clerk/clerk-react";
+import axios from "axios";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { useAudioRecorder } from "react-audio-voice-recorder";
@@ -5,8 +7,14 @@ import { BiSolidMicrophoneAlt } from "react-icons/bi";
 import { HiPlay } from "react-icons/hi";
 import { VscDebugRestart } from "react-icons/vsc";
 
-export default function Record() {
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const URL = "http://localhost:5000/";
+
+export default function VerifySeed() {
     const [error, setError] = useState("");
+    const user = useUser();
     const micOff = useRef(null);
     const microphone = useRef(null);
     const transcriptContainer = useRef(null);
@@ -70,6 +78,25 @@ export default function Record() {
         }
     };
 
+    const verifySeed = async () => {
+        const email = user.user.primaryEmailAddress.emailAddress;
+        const seed = transcript;
+
+        // Post to URL+user/register-seed with email and seed
+        const response = await axios.post(URL + "user/authenticate-seed", {
+            email,
+            seed,
+        });
+        if (response.data.status == "success") {
+            toast.success("Seed authenticated successfully");
+            setTimeout(() => {
+                window.location.href = "/user/vault";
+            }, 2000);
+        } else {
+            toast.error("Seed authentication failed, Please try again");
+        }
+    };
+
     useEffect(() => {
         if (recordingBlob && transcriptContainer.current) {
             const transcriptElem = document.createElement("p");
@@ -87,11 +114,8 @@ export default function Record() {
             )}
 
             <div className=" w-1/2 font-satoshi text-center text-gray-300 font-bold">
-                To register, speak your chosen words aloud now. Remember, these
-                words will be required for future access to your documents and
-                cannot be changed later. Click the microphone icon to start. If
-                you&apos;re unsatisfied, click the restart icon. When finished,
-                click the play icon.
+                In order to access the vault you need to verify your seed.
+                Please click on the microphone and read the seed phrase.
             </div>
 
             <div ref={microphone} className="relative">
@@ -122,9 +146,15 @@ export default function Record() {
                     />
                 </div>
                 <div>
-                    <HiPlay className="text-6xl text-gray-500 cursor-pointer transition-colors hover:text-gray-400" />
+                    <HiPlay
+                        className="text-6xl text-gray-500 cursor-pointer transition-colors hover:text-gray-400"
+                        onClick={() => {
+                            verifySeed();
+                        }}
+                    />
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 }
