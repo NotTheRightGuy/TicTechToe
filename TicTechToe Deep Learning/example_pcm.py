@@ -10,7 +10,8 @@ from deep_speaker.test import batch_cosine_similarity
 model = DeepSpeakerModel(pcm_input=True)
 
 # Load the checkpoint.
-model.m.load_weights('ResCNN_triplet_training_checkpoint_265.h5', by_name=True)
+model.m.load_weights(
+    'ResCNN_triplet_training_checkpoint_265', by_name=True)
 
 samples = [
     'samples/PhilippeRemy/PhilippeRemy_001.wav',
@@ -22,7 +23,8 @@ pcm = [librosa.load(x, sr=SAMPLE_RATE, mono=True)[0] for x in samples]
 
 # Crop samples in the center, to fit the smaller audio samples
 num_samples = min([len(x) for x in pcm])
-pcm = tf.convert_to_tensor(np.stack([x[(len(x) - num_samples) // 2:][:num_samples] for x in pcm]))
+pcm = tf.convert_to_tensor(
+    np.stack([x[(len(x) - num_samples) // 2:][:num_samples] for x in pcm]))
 # Call the model to get the embeddings of shape (1, 512) for each file.
 predict = model.m.predict(pcm)
 speaker_similarity = batch_cosine_similarity(predict[0:1], predict[1:])

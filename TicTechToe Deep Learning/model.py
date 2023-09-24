@@ -33,3 +33,7 @@ def compare_embeddings(person1, person1Other, person2):
         'diff_speaker_similarity': diff_speaker_similarity
     }
     return ob
+
+
+print(compare_embeddings('samples/PhilippeRemy/PhilippeRemy_001.wav',
+                         'samples/PhilippeRemy/PhilippeRemy_002.wav', 'samples/1255-90413-0001.flac'))
