@@ -31,7 +31,7 @@ export default function Hero() {
             </div>
             <div>
                 <img
-                    src="3d-blocks.png"
+                    src="3d-blocks-1.png"
                     alt="Hero background"
                     className="h-[60vh] pr-32 mt-16"
                 />
